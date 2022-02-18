@@ -3,7 +3,7 @@ import Form from "../UI/Form";
 import Button from "../UI/Button";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = ({ onGetExpenseData }) => {
   const [userInput, setUserInput] = useState({
     enteredTitle: "",
     enteredAmount: "",
@@ -35,7 +35,7 @@ const ExpenseForm = () => {
       amount: userInput.enteredAmount,
       date: new Date(userInput.enteredDate),
     };
-    console.log(formData);
+    onGetExpenseData(formData);
     setUserInput((...prevState) => {
       return {
         ...prevState,
@@ -66,8 +66,8 @@ const ExpenseForm = () => {
         <Form
           type="date"
           title="Date"
-          min="2019-01-01"
-          max="2024-12-31"
+          min="2020-01-01"
+          max="2025-12-31"
           value={userInput.enteredDate}
           onchange={dateHandler}
         />

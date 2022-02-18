@@ -1,10 +1,18 @@
 import "./AddExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
-const AddExpense = () => {
+const AddExpense = ({ onGetExpense }) => {
+  const expenseDataHandler = (expenses) => {
+    const expenseData = {
+      ...expenses,
+      id: Math.random().toString(),
+    };
+    onGetExpense(expenseData);
+  };
+
   return (
     <div className="add-expense">
-      <ExpenseForm />
+      <ExpenseForm onGetExpenseData={expenseDataHandler} />
     </div>
   );
 };
