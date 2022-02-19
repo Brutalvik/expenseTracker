@@ -36,6 +36,7 @@ const ExpenseForm = ({ onGetExpenseData }) => {
       date: new Date(userInput.enteredDate),
     };
     onGetExpenseData(formData);
+
     setUserInput((...prevState) => {
       return {
         ...prevState,
