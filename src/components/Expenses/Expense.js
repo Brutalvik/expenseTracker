@@ -5,8 +5,7 @@ import ExpenseList from "./ExpenseList";
 import Card from "../UI/Card";
 
 const Expense = ({ expenses }) => {
-  const [filteredYear, setFilteredYear] = useState(0);
-  // const [filteredExpenses, setFilteredExpenses] = useState([]);
+  const [filteredYear, setFilteredYear] = useState(new Date().getFullYear());
 
   const getFilteredYear = (selected) => {
     setFilteredYear(parseInt(selected));
