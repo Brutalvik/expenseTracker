@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Expense.css";
 import ExpenseFilter from "./ExpenseFilter";
 import ExpenseList from "./ExpenseList";
+
 import Card from "../UI/Card";
 
 const Expense = ({ expenses }) => {
